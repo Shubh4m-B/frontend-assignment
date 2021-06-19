@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import '../Styles/NavBar.css'
 
 export class NavBar extends Component {
     render() {
         return (
             <div className="NavBar">
-                <h1 className="NavBar-brand">Product Name</h1>
+                <Link to='/invoice-app'>
+                    <h2 className="NavBar-brand">Invoice App</h2>
+                </Link>
                 <ul className="NavBar-list">
                     <li className="NavBar-item">
-                        My Orders
+                        <Link to='/invoice-app'>Home</Link>
                     </li>
                     <li className="NavBar-item">
-                        My Cart
-                    </li>
-                    <li className="NavBar-item">
-                        Logout
+                        <Link to='/invoice-app/new'>New Invoice</Link>
                     </li>
                 </ul>
             </div>

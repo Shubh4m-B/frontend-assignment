@@ -12,6 +12,7 @@
 }
 
 .NavBar-list {
+  height: 100%;
   width: 50%;
   display: flex;
   justify-content: space-evenly;
@@ -23,12 +24,24 @@
 
 .NavBar-item {
   transition: all 0.3s ease-in;
-  padding: 0.5rem;
-  border-bottom: 3px solid rgb(32, 32, 32);
   cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.NavBar-item:hover {
+.NavBar-item > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  color: rgb(162, 162, 162);
+}
+
+.NavBar-item > a:hover {
   color: white;
-  border-bottom: 3px solid red;
 }
