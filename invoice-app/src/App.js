@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import NavBar from './Components/NavBar'
 import Home from './Components/Home'
 import NewInvoice from './Components/NewInvoice'
@@ -24,6 +24,7 @@ export class App extends Component {
               <Home />
             }
           />
+          <Redirect exact from='/' to='/invoice-app' />
         </Switch>
       </div>
     )
