@@ -38,7 +38,7 @@ function NewItemForm(props) {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        const item = { productName: productName, qty: qty, price: price, id: uuidv4() }
+        const item = { productName: productName, qty: qty, price: price, id: uuidv4().slice(-12) }
         addProduct(productList => [...productList, item])
         setproductName("")
         setqty("")
@@ -48,9 +48,9 @@ function NewItemForm(props) {
     // Create the invoice
     const handleCreate = () => {
         const newInvoice = {
-            id: uuidv4(),
+            id: uuidv4().slice(-12),
             customerName: customerName,
-            customerId: uuidv4(),
+            customerId: uuidv4().slice(-12),
             email: email,
             dueDate: dueDate,
             list: productList

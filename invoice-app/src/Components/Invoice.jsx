@@ -1,10 +1,11 @@
 import React from 'react'
 
-export default function MiniInvoice(props) {
-    const { id, customerName, customerId, status } = props.invoice
-    const { handleClick } = props
+export default function Invoice(props) {
+    const { id, customerId, customerName, status } = props.invoice
     return (
-        <div onClick={() => handleClick(id)}>
+        <div>
+            <h1>Hello</h1>
+            <p>This is the id: {id}</p>
             <h1>Invoice ID: {id}</h1>
             <h2>Customer ID: {customerId}</h2>
             <h2>Customer Name: {customerName}</h2>
