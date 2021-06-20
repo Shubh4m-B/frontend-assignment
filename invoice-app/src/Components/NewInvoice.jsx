@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import NewItemForm from './NewItemForm'
-import InvoiceForm from './InvoiceForm'
 
 export class NewInvoice extends Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
         return (
             <div className="NewInvoice">
-                <InvoiceForm />
-                <NewItemForm />
+                <NewItemForm saveInvoice={this.props.saveInvoice} routeProps={this.props.routeProps} />
             </div>
         )
     }

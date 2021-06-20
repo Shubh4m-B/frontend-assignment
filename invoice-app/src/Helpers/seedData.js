@@ -5,7 +5,7 @@ export default [
         customerId: "100",
         email: "akash@gmail.com",
         invoiceDate: "",
-        dewDate: "",
+        dueDate: "",
         status: "pending",
         list: [
             {
@@ -22,7 +22,7 @@ export default [
         customerId: "101",
         email: "akshat@gmail.com",
         invoiceDate: "",
-        dewDate: "",
+        dueDate: "",
         status: "pending",
         list: [
             {

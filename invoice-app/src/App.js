@@ -12,7 +12,15 @@ export class App extends Component {
     this.state = {
       invoices: seedData
     }
+    this.saveInvoice = this.saveInvoice.bind(this)
   }
+
+  saveInvoice(newInvoice) {
+    this.setState(
+      { invoices: [...this.state.invoices, newInvoice] },
+    )
+  }
+
   render() {
     return (
       <div className="App">
@@ -21,8 +29,8 @@ export class App extends Component {
           <Route
             exact
             path='/invoice-app/new'
-            render={() =>
-              <NewInvoice />
+            render={(routeProps) =>
+              <NewInvoice saveInvoice={this.saveInvoice} routeProps={routeProps} />
             }
           />
           <Route
