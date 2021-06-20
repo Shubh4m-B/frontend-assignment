@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import NewForm from './NewForm'
+import NewItemForm from './NewItemForm'
+import InvoiceForm from './InvoiceForm'
 
 export class NewInvoice extends Component {
     render() {
         return (
             <div className="NewInvoice">
-                This is the new invoice form
-                <NewForm />
+                <InvoiceForm />
+                <NewItemForm />
             </div>
         )
     }

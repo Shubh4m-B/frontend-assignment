@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import ListItem from './ListItem'
 
-function NewForm(props) {
+function NewItemForm(props) {
 
     const [productName, setproductName] = useState("")
     const [qty, setqty] = useState("")
@@ -35,6 +35,7 @@ function NewForm(props) {
                     <ListItem productName={item.productName} qty={item.qty} price={item.price} id={item.id} key={item.id} />
                 ))}
             </div>
+            <h2>Add New Item</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Item Name" onChange={handleName} value={productName}></input>
                 <input type="text" placeholder="Quantity" onChange={handleQty} value={qty}></input>
@@ -46,4 +47,4 @@ function NewForm(props) {
 
 }
 
-export default NewForm
+export default NewItemForm
