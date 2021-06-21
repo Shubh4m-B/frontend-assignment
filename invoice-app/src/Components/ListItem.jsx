@@ -14,7 +14,7 @@ export default function ListItem(props) {
                 <h5>{price}</h5>
             </div>
             <div className="item">
-                <h5>{qty * price}</h5>
+                <h5>{Math.round((qty * price) * 100) / 100}</h5>
             </div>
         </div>
     )
