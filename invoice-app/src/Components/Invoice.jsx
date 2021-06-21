@@ -9,7 +9,11 @@ import '../Styles/NewInvoice.css'
 
 export default function Invoice(props) {
     const { id, customerId, customerName, status, list, email, dueDate } = props.invoice
+    const { updateStatus } = props
 
+    const handleUpdate = () => {
+        updateStatus(id, "Paid")
+    }
     return (
         <div className="container Invoice">
             <h1 className="NewItemForm-heading1">Invoice #{id}</h1>
@@ -20,6 +24,7 @@ export default function Invoice(props) {
                     <h5>Email: {email}</h5>
                     <h5>Due Date: {dueDate}</h5>
                     <h5>Status: {status}</h5>
+
                 </div>
                 <Title />
                 {

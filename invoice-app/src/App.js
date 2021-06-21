@@ -15,6 +15,7 @@ export class App extends Component {
     }
     this.saveInvoice = this.saveInvoice.bind(this)
     this.findInvoice = this.findInvoice.bind(this)
+    this.updateStatus = this.findInvoice.bind(this)
   }
 
   saveInvoice(newInvoice) {
@@ -27,6 +28,10 @@ export class App extends Component {
     return this.state.invoices.find(function (invoice) {
       return invoice.id === id;
     })
+  }
+
+  updateStatus(id, status) {
+    console.log(`For id: ${id} change status to ${status}`)
   }
 
   render() {
@@ -45,7 +50,7 @@ export class App extends Component {
             exact
             path="/invoice-app/invoice/:id"
             render={(routeProps) => (
-              <Invoice invoice={this.findInvoice(routeProps.match.params.id)} {...routeProps} />
+              <Invoice invoice={this.findInvoice(routeProps.match.params.id)} updateStatus={this.updateStatus} {...routeProps} />
             )}
           />
           <Route
