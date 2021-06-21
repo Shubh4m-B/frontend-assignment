@@ -8,7 +8,9 @@ export class NewInvoice extends Component {
     render() {
         return (
             <div className="NewInvoice">
-                <NewItemForm saveInvoice={this.props.saveInvoice} routeProps={this.props.routeProps} />
+                <div className="container">
+                    <NewItemForm saveInvoice={this.props.saveInvoice} routeProps={this.props.routeProps} />
+                </div>
             </div>
         )
     }

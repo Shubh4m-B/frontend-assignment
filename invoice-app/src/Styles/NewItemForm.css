@@ -1,0 +1,82 @@
+.NewItemForm {
+  height: 100%;
+  /* background-color: antiquewhite; */
+}
+
+.NewItemForm-heading1 {
+  padding: 1.6em;
+  text-align: center;
+}
+
+.NewItemForm-heading2 {
+  padding: 1.1em;
+  text-align: center;
+}
+
+.NewItemForm-form1 {
+  width: 100%;
+  /* background-color: azure; */
+}
+
+.form-row {
+  width: 100%;
+  margin: 10px;
+}
+
+.col-3 {
+  text-align: right;
+  margin: 0 10px;
+}
+
+/* Title */
+.Title {
+  display: flex;
+  width: 100%;
+}
+
+.Title-item,
+.item {
+  width: 25%;
+  padding: 0 0 20px 0;
+  margin: 0 0 20px 0;
+  text-align: center;
+  border-bottom: 2px solid black;
+  color: rgb(68, 68, 68);
+}
+
+.Title-item {
+  color: black;
+}
+
+/* Total */
+.Total {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.Total-text {
+  width: 25%;
+  text-align: center;
+}
+
+/* Form for productlist */
+.Form {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Form-item {
+  width: 22%;
+}
+
+/* Create Button */
+.NewItemForm-button {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
