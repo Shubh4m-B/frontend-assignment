@@ -11,10 +11,10 @@ export default function Title() {
                 <h5>Quantity</h5>
             </div>
             <div className="Title-item">
-                <h5>Price</h5>
+                <h5>Price (Rs)</h5>
             </div>
             <div className="Title-item">
-                <h5>Total</h5>
+                <h5>Total (Rs)</h5>
             </div>
         </div>
     )

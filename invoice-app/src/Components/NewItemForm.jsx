@@ -58,7 +58,8 @@ function NewItemForm(props) {
             customerId: uuidv4().slice(-12),
             email: email,
             dueDate: dueDate,
-            list: productList
+            list: productList,
+            status: "Pending"
         }
         props.saveInvoice(newInvoice)
         props.routeProps.history.push("/");
@@ -68,44 +69,46 @@ function NewItemForm(props) {
         <div className="NewItemForm">
             <h1 className="NewItemForm-heading1">Create New Invoice</h1>
             <div className="NewItemForm-general">
-                <h2 className="NewItemForm-heading2">General Details</h2>
+                <h3 className="NewItemForm-heading2">General Details</h3>
                 <form className="NewItemForm-form1">
-                    <div className="row form-row">
+                    <div className="row form-row align-items-center">
                         <label htmlFor="name" className="col-3">Customer Name: </label>
                         <input type="text" placeholder="Customer Name" id="name" onChange={handleCustomer} value={customerName} className="col-7" />
                     </div>
-                    <div className="row form-row">
+                    <div className="row form-row align-items-center">
                         <label htmlFor="email" className="col-3">Email ID: </label>
                         <input type="email" placeholder="Email Id" id="email" onChange={handleEmail} value={email} className="col-7" />
                     </div>
-                    <div className="row form-row">
+                    <div className="row form-row align-items-center">
                         <label htmlFor="date" className="col-3">Due Date:</label>
                         <input type="date" id="date" onChange={handleDate} value={dueDate} />
                     </div>
                 </form>
             </div>
 
-            <h2 className="NewItemForm-heading2">Items</h2>
-            <Title />
-            <div>
-                {productList.length ?
-                    productList.map((item) => (
-                        <ListItem productName={item.productName} qty={item.qty} price={item.price} id={item.id} key={item.id} />
-                    ))
-                    : <Empty />
-                }
-                <Total productList={productList} />
-            </div>
+            <div className="NewItemForm-general">
+                <h3 className="NewItemForm-heading2">Items</h3>
+                <Title />
+                <div>
+                    {productList.length ?
+                        productList.map((item) => (
+                            <ListItem productName={item.productName} qty={item.qty} price={item.price} id={item.id} key={item.id} />
+                        ))
+                        : <Empty />
+                    }
+                    <Total productList={productList} />
+                </div>
 
-            <h5 className="NewItemForm-heading2">Add New Item</h5>
-            <form onSubmit={handleSubmit} className="Form">
-                <input type="text" placeholder="Item Name" onChange={handleName} value={productName} className="Form-item" required></input>
-                <input type="text" placeholder="Quantity" onChange={handleQty} value={qty} className="Form-item" required></input>
-                <input type="text" placeholder="Price" onChange={handlePrice} value={price} className="Form-item" required></input>
-                <button type="submit" className="Form-item">Add</button>
-            </form>
-            <div className="NewItemForm-button">
-                <button onClick={handleCreate} >Send Invoice</button>
+                <h5 className="NewItemForm-heading2">Add New Item</h5>
+                <form onSubmit={handleSubmit} className="Form">
+                    <input type="text" placeholder="Item" onChange={handleName} value={productName} className="Form-item" required></input>
+                    <input type="text" placeholder="Quantity" onChange={handleQty} value={qty} className="Form-item" required></input>
+                    <input type="text" placeholder="Price" onChange={handlePrice} value={price} className="Form-item" required></input>
+                    <button type="submit" className="Form-item" className="NewItemForm-btn">Add</button>
+                </form>
+                <div className="NewItemForm-button">
+                    <button onClick={handleCreate} className="NewItemForm-btn" id="add-btn">Send Invoice</button>
+                </div>
             </div>
         </div>
     )

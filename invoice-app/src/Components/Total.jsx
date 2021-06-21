@@ -14,7 +14,7 @@ export default function Total(props) {
     return (
         <div className="Total">
             <div className="Total-text">
-                <h5>Grand Total: {Math.round(calTotal(productList) * 100) / 100}</h5>
+                <h5>Grand Total (Rs): {Math.round(calTotal(productList) * 100) / 100}</h5>
             </div>
         </div>
     )
